@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Phase 0 permissions for the two local game windows.",
+  "windows": ["star-core", "world-overlay"],
+  "permissions": ["core:default"]
+}

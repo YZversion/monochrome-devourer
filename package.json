@@ -1,0 +1,26 @@
+{
+  "name": "monochrome-devourer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "tauri": "scripts\\tauri-msvc.cmd",
+    "tauri:dev": "scripts\\tauri-msvc.cmd dev",
+    "tauri:build": "scripts\\tauri-msvc.cmd build --no-bundle"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.11.1",
+    "pixi.js": "8.19.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.11.4",
+    "@types/node": "24.4.0",
+    "typescript": "5.9.3",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}

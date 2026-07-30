@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Monochrome Devourer",
+  "version": "0.1.0",
+  "identifier": "dev.monochrome.devourer",
+  "build": {
+    "beforeDevCommand": "npm.cmd run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm.cmd run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost http://127.0.0.1:1420 ws://127.0.0.1:1420; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline';"
+    },
+    "windows": [
+      {
+        "label": "star-core",
+        "title": "Monochrome Devourer",
+        "url": "index.html?window=star-core",
+        "width": 96,
+        "height": 96,
+        "minWidth": 96,
+        "minHeight": 96,
+        "maxWidth": 96,
+        "maxHeight": 96,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": true,
+        "focus": true
+      },
+      {
+        "label": "world-overlay",
+        "title": "Monochrome Devourer — World",
+        "url": "index.html?window=world-overlay",
+        "fullscreen": true,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "focus": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": false,
+    "targets": "all"
+  }
+}
