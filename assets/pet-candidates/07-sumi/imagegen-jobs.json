@@ -1,0 +1,45 @@
+{
+  "selected_candidate": "07-sumi",
+  "jobs": [
+    {
+      "id": "down",
+      "kind": "directional-row",
+      "status": "complete",
+      "frames": 8,
+      "output_path": "decoded/down.png",
+      "qa_note": "Eight separated front-facing walking frames passed generation QA."
+    },
+    {
+      "id": "up",
+      "kind": "directional-row",
+      "status": "complete",
+      "frames": 8,
+      "output_path": "decoded/up.png",
+      "qa_note": "Eight separated rear-facing walking frames passed generation QA."
+    },
+    {
+      "id": "right",
+      "kind": "directional-row",
+      "status": "complete",
+      "frames": 8,
+      "output_path": "decoded/running-right.png",
+      "qa_note": "Eight separated right-facing walking frames passed generation QA."
+    },
+    {
+      "id": "left",
+      "kind": "directional-row",
+      "status": "complete",
+      "frames": 8,
+      "output_path": "decoded/running-left.png",
+      "qa_note": "Native left-facing generation replaced a rejected mirrored strip."
+    }
+  ],
+  "rejected_derivations": [
+    {
+      "state": "left",
+      "source": "right",
+      "transform": "framewise-horizontal-mirror-preserving-order",
+      "reason": "The generated source strip did not use exact equal-width slots, so the mirror transform clipped frames 1, 2, and 6. The derived row was discarded and regenerated natively."
+    }
+  ]
+}

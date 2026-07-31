@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "atlas": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\src\\assets\\pets\\sumi.png",
+  "atlas_size": [
+    1536,
+    1040
+  ],
+  "cell_size": [
+    192,
+    208
+  ],
+  "palette": [
+    "#000000",
+    "#ffffff",
+    "transparent"
+  ],
+  "states": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "preview": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\07-sumi\\qa\\previews\\idle.gif"
+    },
+    "down": {
+      "row": 1,
+      "frames": 8,
+      "preview": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\07-sumi\\qa\\previews\\down.gif"
+    },
+    "up": {
+      "row": 2,
+      "frames": 8,
+      "preview": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\07-sumi\\qa\\previews\\up.gif"
+    },
+    "left": {
+      "row": 3,
+      "frames": 8,
+      "preview": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\07-sumi\\qa\\previews\\left.gif"
+    },
+    "right": {
+      "row": 4,
+      "frames": 8,
+      "preview": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\07-sumi\\qa\\previews\\right.gif"
+    }
+  }
+}

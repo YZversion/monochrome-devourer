@@ -8,7 +8,7 @@ import {
 } from "../window-runtime";
 import { FixedStepClock } from "./fixed-step";
 import { DirectionInput } from "./input";
-import { PixelCreature } from "./pixel-creature";
+import { SumiPet } from "./sumi-pet";
 
 interface Simulation {
   ticks: number;
@@ -19,7 +19,7 @@ export async function mountWorld(root: HTMLDivElement): Promise<void> {
   root.innerHTML = `
     <main class="world" aria-label="展开的黑白星球">
       <output class="world__status" aria-live="off">PAUSED</output>
-      <div class="world__hint">方向键移动 · Esc 或点击生物外部折叠</div>
+      <div class="world__hint">W/A/S/D 移动 · Esc 或点击猫咪外部折叠</div>
     </main>
   `;
 
@@ -50,7 +50,7 @@ export async function mountWorld(root: HTMLDivElement): Promise<void> {
   });
   app.stage.addChild(backdrop);
 
-  const creature = new PixelCreature();
+  const creature = await SumiPet.create();
   creature.place(window.innerWidth / 2, window.innerHeight / 2);
   app.stage.addChild(creature.view);
 
@@ -136,6 +136,7 @@ export async function mountWorld(root: HTMLDivElement): Promise<void> {
     } else {
       app.stop();
       clock.reset();
+      creature.resetAnimation();
       pausedAtTick = simulation.ticks;
       pausedAtTime = performance.now();
       status.value = `PAUSED\nTICKS · ${simulation.ticks}`;

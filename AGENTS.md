@@ -17,11 +17,24 @@ until every Phase 0 acceptance item has evidence.
 - TypeScript/PixiJS owns rendering, input, and the fixed-step simulation.
 - Never send per-frame simulation traffic through Tauri IPC.
 - A collapsed world has a stopped Pixi ticker, a reset fixed-step accumulator, and
-  no direction-key listeners.
+  no `W/A/S/D` movement-key listeners.
 - Use only pure black and pure white for game art. Express gray through pixel
   dithering, disable antialiasing, use nearest-neighbor presentation, and align
   graphics to integer coordinates.
 - Reuse the two windows; do not destroy/recreate them during expand/collapse.
+
+## Selected Phase 0 character
+
+- Candidate 07, **Sumi**, is the approved runtime identity.
+- Keep the five-row runtime atlas at `src/assets/pets/sumi.png`: `idle`, `down`, `up`,
+  `left`, and `right`.
+- `src/world/pet-animation.ts` owns frame/state timing; `src/world/sumi-pet.ts` owns
+  PixiJS texture slicing, rendering, hit bounds, and movement.
+- Rebuild generated pet artifacts with `scripts/build_sumi_sprite_sheet.py` and
+  inspect `assets/pet-candidates/07-sumi/qa/contact-sheet.png` plus all five GIFs
+  before accepting an art change.
+- Do not switch candidates or regenerate Sumi's identity without explicit user
+  direction.
 
 ## Required verification
 

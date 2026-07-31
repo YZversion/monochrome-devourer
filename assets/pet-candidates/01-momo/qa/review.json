@@ -1,0 +1,214 @@
+{
+  "ok": false,
+  "frames_root": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames",
+  "errors": [
+    "expected 8 frame files for running-right, found 0",
+    "expected 8 frame files for running-left, found 0",
+    "expected 4 frame files for waving, found 0",
+    "expected 5 frame files for jumping, found 0",
+    "expected 8 frame files for failed, found 0",
+    "expected 6 frame files for waiting, found 0",
+    "expected 6 frame files for running, found 0",
+    "expected 6 frame files for review, found 0"
+  ],
+  "warnings": [],
+  "rows": [
+    {
+      "state": "idle",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 24319,
+          "bbox": [
+            15,
+            5,
+            176,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 241
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 24397,
+          "bbox": [
+            15,
+            5,
+            177,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 164
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 24501,
+          "bbox": [
+            14,
+            5,
+            177,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 174
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 23686,
+          "bbox": [
+            16,
+            5,
+            175,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 171
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 23900,
+          "bbox": [
+            16,
+            5,
+            176,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 242
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\14390\\Desktop\\Code\\monochrome-devourer\\assets\\pet-candidates\\01-momo\\frames\\idle\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 24124,
+          "bbox": [
+            15,
+            5,
+            177,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 211
+        }
+      ]
+    },
+    {
+      "state": "running-right",
+      "expected_frames": 8,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 8 frame files for running-right, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "running-left",
+      "expected_frames": 8,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 8 frame files for running-left, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "waving",
+      "expected_frames": 4,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 4 frame files for waving, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "jumping",
+      "expected_frames": 5,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 5 frame files for jumping, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "failed",
+      "expected_frames": 8,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 8 frame files for failed, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "waiting",
+      "expected_frames": 6,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 6 frame files for waiting, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "running",
+      "expected_frames": 6,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 6 frame files for running, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    },
+    {
+      "state": "review",
+      "expected_frames": 6,
+      "actual_frames": 0,
+      "extraction_method": null,
+      "ok": false,
+      "errors": [
+        "expected 6 frame files for review, found 0"
+      ],
+      "warnings": [],
+      "frames": []
+    }
+  ]
+}
