@@ -15,7 +15,7 @@ export interface KeyboardEventTarget {
   ): void;
 }
 
-const DIRECTION_KEYS = new Set(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]);
+const MOVEMENT_KEYS = new Set(["KeyW", "KeyA", "KeyS", "KeyD"]);
 
 export class DirectionInput {
   private readonly pressed = new Set<string>();
@@ -24,19 +24,19 @@ export class DirectionInput {
   public constructor(private readonly target: KeyboardEventTarget = window) {}
 
   private readonly onKeyDown = (event: KeyboardEvent): void => {
-    if (!this.active || !DIRECTION_KEYS.has(event.key)) {
+    if (!this.active || !MOVEMENT_KEYS.has(event.code)) {
       return;
     }
     event.preventDefault();
-    this.pressed.add(event.key);
+    this.pressed.add(event.code);
   };
 
   private readonly onKeyUp = (event: KeyboardEvent): void => {
-    if (!this.active || !DIRECTION_KEYS.has(event.key)) {
+    if (!this.active || !MOVEMENT_KEYS.has(event.code)) {
       return;
     }
     event.preventDefault();
-    this.pressed.delete(event.key);
+    this.pressed.delete(event.code);
   };
 
   public setActive(active: boolean): void {
@@ -56,12 +56,8 @@ export class DirectionInput {
   }
 
   public read(): Direction {
-    const x =
-      Number(this.pressed.has("ArrowRight")) -
-      Number(this.pressed.has("ArrowLeft"));
-    const y =
-      Number(this.pressed.has("ArrowDown")) -
-      Number(this.pressed.has("ArrowUp"));
+    const x = Number(this.pressed.has("KeyD")) - Number(this.pressed.has("KeyA"));
+    const y = Number(this.pressed.has("KeyS")) - Number(this.pressed.has("KeyW"));
     const length = Math.hypot(x, y);
 
     return length > 0 ? { x: x / length, y: y / length } : { x: 0, y: 0 };

@@ -11,3 +11,6 @@ Before working, read:
 
 All four files are living documents and must be updated when the implementation,
 decisions, verification state, or active milestone changes.
+
+Current Phase 0 character: **07 Sumi**. Its authoritative runtime and QA paths are
+documented in `architecture.md` and `handoff.md`.

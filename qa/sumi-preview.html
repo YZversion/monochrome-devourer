@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumi Runtime Preview</title>
+    <style>
+      :root {
+        color: #000;
+        background: #d8d8d8;
+        font-family: Consolas, monospace;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      main {
+        width: min(860px, calc(100vw - 32px));
+      }
+
+      header,
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      button {
+        border: 2px solid #000;
+        padding: 8px 12px;
+        color: #000;
+        background: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      button[aria-pressed="true"] {
+        color: #fff;
+        background: #000;
+      }
+
+      #preview {
+        overflow: hidden;
+        border: 3px solid #000;
+        background:
+          linear-gradient(45deg, #c8c8c8 25%, transparent 25%),
+          linear-gradient(-45deg, #c8c8c8 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #c8c8c8 75%),
+          linear-gradient(-45deg, transparent 75%, #c8c8c8 75%),
+          #fff;
+        background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+        background-size: 16px 16px;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>07 SUMI · REAL PIXI RUNTIME</h1>
+        <output id="state">IDLE</output>
+      </header>
+      <nav aria-label="Animation direction">
+        <button type="button" data-state="idle" aria-pressed="true">IDLE</button>
+        <button type="button" data-state="up" aria-pressed="false">W · UP</button>
+        <button type="button" data-state="left" aria-pressed="false">A · LEFT</button>
+        <button type="button" data-state="down" aria-pressed="false">S · DOWN</button>
+        <button type="button" data-state="right" aria-pressed="false">D · RIGHT</button>
+      </nav>
+      <div id="preview"></div>
+    </main>
+    <script type="module" src="/src/world/sumi-preview.ts"></script>
+  </body>
+</html>

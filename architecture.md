@@ -66,10 +66,40 @@ No game-loop values cross this boundary.
 - The Pixi ticker starts only when Rust reports `active: true`.
 - Collapsing stops the ticker, clears direction input, and resets accumulated time.
 - `FixedStepClock` advances simulation at 60 Hz and limits catch-up work.
-- A pure black/white procedural creature is drawn from integer-aligned rectangles.
+- `SumiPet` renders the selected longhair kitten from one lossless 1536×1040 atlas.
+  The atlas contains 192×208 cells in five rows: six-frame `idle`, then eight-frame
+  `down`, `up`, `left`, and `right`.
+- `PetAnimation` selects rows from the normalized `W/A/S/D` direction vector and
+  advances frame timing inside the fixed-step update. Stopping returns to `idle`;
+  collapsing resets the animation to idle frame zero.
+- Atlas sampling is explicitly nearest-neighbor, sprite coordinates are rounded, and
+  the validated visible palette is limited to pure black and pure white.
 - A 1%-alpha black Pixi backdrop keeps the Windows compositor hit-testable without
   visibly obscuring the desktop. A DOM pointer handler collapses only when the click
   falls outside the creature's logical bounds.
+
+### Pet art pipeline
+
+Candidate 07, Sumi, is the selected Phase 0 runtime identity. The other nine
+exploratory pets remain under `assets/pet-candidates/` for design history and are not
+part of the runtime dependency graph.
+
+- Ten original black/white candidates each have a six-frame idle loop for selection.
+- Source strips are segmented into 192×208 RGBA frames and deterministically
+  quantized to black, white, or transparency by
+  `scripts/quantize_pet_frames.py`.
+- `scripts/build_pet_candidate_overview.py` validates all frames and GIF frame counts,
+  then builds static and animated comparison sheets with a 50% game-size check.
+- Sumi adds four eight-frame directional rows. `scripts/build_sumi_sprite_sheet.py`
+  validates all 38 frames, emits the runtime atlas at `src/assets/pets/sumi.png`,
+  and creates five GIF previews plus a QA contact sheet.
+- A rejected deterministic left-row mirror is recorded in
+  `assets/pet-candidates/07-sumi/imagegen-jobs.json`; native left-facing generation
+  replaced it because the source strip's unequal visual slots caused clipping.
+- `qa/sumi-preview.html` loads the production `SumiPet` class and atlas in an isolated
+  PixiJS harness for safe direction-by-direction visual inspection.
+- Candidate references influence silhouette, proportion, and animation structure
+  only; no third-party character artwork is shipped.
 
 ## State transitions
 
@@ -98,7 +128,7 @@ loss, or the global shortcut. Repeated requests are idempotent.
 - Exactly one process and exactly two reusable windows.
 - At most one of the two windows is visible after a transition completes.
 - Simulation ticks occur only while `WorldRuntime.active` is true.
-- Arrow keys are prevented only while the world is active.
+- Only `W/A/S/D` are prevented while the world is active; arrow keys are never captured.
 - `Esc` and background clicks collapse rather than close the process.
 - Window lifecycle IPC is low-frequency; rendering and simulation never use IPC.
 - Game art uses `#000000` and `#ffffff`; transparency is allowed for the desktop
